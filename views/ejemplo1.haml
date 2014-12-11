@@ -1,0 +1,22 @@
+.row.triple-pad-top
+    %h2 #{@title}
+    .one.half
+        %code.block{:style => "height:300px; max-height:300px;overflow-y:scroll;"}
+            %pre.code
+                =preserve do
+                    :escaped
+                        window.onload = function(){
+
+                          var contenedor = document.getElementById('canvas_container');
+                          var paper = new Raphael(contenedor,500,300);
+                          paper.circle(150,150, 80);
+                          paper.rect(300 , 65 , 150 , 150);
+
+
+                        }
+
+
+    .one.half
+        #canvas_container
+
+%script{:type => "text/javascript" , :src => "/js/webgl/ejemplo1.js"}
